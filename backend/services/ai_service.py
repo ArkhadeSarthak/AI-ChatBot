@@ -1,10 +1,16 @@
+import os
 import time
 from google import genai
 from google.genai import errors
 
+
 def get_ai_response(message):
-    client = genai.Client(api_key="")
-    
+    api_key = os.getenv("GEMINI_API_KEY", "")
+    if not api_key:
+        raise ValueError("GEMINI_API_KEY is not set")
+
+    client = genai.Client(api_key=api_key)
+
     max_retries = 4
     delay = 1.0
     
