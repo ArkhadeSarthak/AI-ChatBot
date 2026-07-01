@@ -7,8 +7,14 @@ router = APIRouter(
     tags=["Chat"]
 )
 
+@router.get("/")
+def chat_get():
+    return {
+        "message": "Send a POST request with a JSON body containing 'message'"
+    }
+
 @router.post("/")
-def chat(data: ChatRequest):
+def chat_post(data: ChatRequest):
     try:
         print("DEBUG INPUT:", data)
 
