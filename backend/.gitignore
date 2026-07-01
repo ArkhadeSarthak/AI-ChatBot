@@ -1,0 +1,22 @@
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+.env.*
+
+# Local uploads and generated outputs
+uploads/
+outputs/
+*.log
+
+# IDE/editor files
+.vscode/
+.idea/
