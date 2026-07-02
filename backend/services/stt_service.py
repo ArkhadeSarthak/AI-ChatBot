@@ -1,10 +1,18 @@
 from faster_whisper import WhisperModel
 
-model = WhisperModel("base", device="cpu")
+_model = None
+
+
+def _get_model():
+    global _model
+    if _model is None:
+        _model = WhisperModel("base", device="cpu")
+    return _model
 
 
 def speech_to_text(audio_path):
-    segments, info = model.transcribe(audio_path)
+    model = _get_model()
+    segments, _info = model.transcribe(audio_path)
 
     text = ""
 

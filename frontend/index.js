@@ -1,6 +1,8 @@
-fetch("http://127.0.0.1:8000")
+const API_BASE_URL = "http://127.0.0.1:8000";
+
+fetch(API_BASE_URL)
     .then(res => res.json())
-    .then(res => {
+    .then(() => {
         document.getElementById("greet").innerHTML += ".!"
     })
 
@@ -101,7 +103,7 @@ async function sendMessage() {
 
     // 3. CALL BACKEND
     try {
-        const res = await fetch("http://127.0.0.1:8000/chat/", {
+        const res = await fetch(`${API_BASE_URL}/chat/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -254,7 +256,7 @@ async function sendAudioToBackend(audioBlob) {
     formData.append("audio", audioBlob, "recording.webm");
 
     try {
-        const response = await fetch("http://localhost:8000/voice/", {
+        const response = await fetch(`${API_BASE_URL}/voice/`, {
             method: 'POST',
             body: formData
         });
