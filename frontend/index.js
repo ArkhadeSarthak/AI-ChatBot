@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://ai-chatbot-uvoi.onrender.com";
 
 fetch(API_BASE_URL)
     .then(res => res.json())

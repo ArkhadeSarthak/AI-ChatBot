@@ -1,14 +1,9 @@
-import os
 import time
 from google import genai
 from google.genai import errors
-from dotenv import load_dotenv
-
-load_dotenv()
-
 
 def get_ai_response(message):
-    api_key = os.getenv("GEMINI_API_KEY", "")
+    api_key = "AQ.Ab8RN6KiJWS6gpyctNcVavEqZKTPtkPQC-ax_PbK-hagEWcBuQ"
     if not api_key:
         raise ValueError("GEMINI_API_KEY is not set")
 
