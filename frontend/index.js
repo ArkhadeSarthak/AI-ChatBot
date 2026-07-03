@@ -362,3 +362,9 @@ function monitorSilence() {
 
     checkVolume();
 }
+
+
+function clearChat() {
+    localStorage.removeItem("chats")
+    window.location.reload()
+}
